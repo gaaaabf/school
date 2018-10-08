@@ -9,6 +9,7 @@
 	<script src="bootstrap/jquery-3.3.1.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="bootstrap/function.js"></script>
+
 </head>
 <body>
 
@@ -46,9 +47,9 @@
 
 	</div>
 	<div id="pakita"></div>
-	<!-- <div id="add" style="display:none;">
-		<fieldset><br>
-			<form method="post" id="addForm">
+
+	<div id="add" style="display:none;"><br>
+		<form method="post" id="addForm">
 			<h3>Add Data</h3>
 				<div class="form-row align-items-center">
 					<div class="col-sm-3 my-1">
@@ -73,40 +74,40 @@
 				</div>
 				<br>
 				<input type="button" class="btn btn-primary" id="addBtn" value="Submit">
-			</form>
-		</fieldset>
+		</form>
+	</div>
 
-		<div id="update" style="visibility: hidden;">
-		<form method="GET" id="updateForm" target="index.html">
-			<h3>Edit	 Data</h3>
+	<div id="update" style="display:none;">
+		<form method="post" id="updateForm">
+			<h3>Edit Data</h3>
 			<div class="form-row align-items-center">
 				<div class="col-sm-3 my-1">
 					<label class="col-sm-2 col-form-label">First</label>
-					<input type="text" class="form-control" id="ffirst" name="first">
+					<input type="text" class="form-control" id="efirst" name="firste">
 				</div>
 				<div class="col-sm-3 my-1">
 					<label class="col-sm-2 col-form-label">Last</label>
-					<input type="text" class="form-control" name="last">
+					<input type="text" class="form-control" id="elast" name="laste">
 				</div>
 			</div>
 
 			<div class="form-row align-items-center">
 				<div class="col-sm-3 my-1">
 					<label class="col-sm-2 col-form-label">Email</label>
-					<input type="email" class="form-control" name="email">
+					<input type="email" class="form-control" id="eemail" name="emaile">
 				</div>
 				<div class="col-sm-3 my-1">
 					<label class="col-sm-2 col-form-label">Contact</label>
-					<input type="text" class="form-control" name="contact">
+					<input type="text" class="form-control" id="econtact" name="contacte">
+					<input type="hidden" id="hidden" name="hidden">
 				</div>
 			</div>
 			<br>
-			<input type="button" class="btn btn-primary" id="addBtn" value="Submit">
-		</form> -->
-			<script type="text/javascript">
-			</script>		
-
+			<input type="button" class="btn btn-primary" id="editBtn" value="Update">
+		</form>
 	</div>
+			<script type="text/javascript">
+			</script>	
 </div>
 
 </body>
