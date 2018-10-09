@@ -27,13 +27,17 @@ function showList() {
 				document.getElementById('tbody').innerHTML = test;
 		}
 		else{
-			document.getElementById('tbody').innerHTML = '<h1>NO DATA FOUND</h1>';
+			document.getElementById('tbody').innerHTML = '<h1 style="text-align:center;">NO DATA FOUND</h1>';
 		}
 }
 
 function deleteAction(count) {
 	data.splice(count,1)
 	console.log(data);
+
+	$("#addForm").trigger("reset");
+	$("#updateForm").trigger("reset"); 
+	$("#update").css('display','none');   
 	showList();
 }
 
@@ -63,7 +67,7 @@ $(document).ready(function() {
 			var contact = $('input[name=contacte]').val();
 			var count = $('input[name=hidden]').val();
 
-				console.log(count);
+				console.log(data);
 				data[count].splice(0,5,fname,lname,email,contact);
 
 					showList();
@@ -74,6 +78,6 @@ $(document).ready(function() {
 			$("#add").css('display','none');
 		});
 		$("#hideForm2").click(function(){
-			$("#update").css('display,none');
+			$("#update").css('display','none');
 		});
 });
