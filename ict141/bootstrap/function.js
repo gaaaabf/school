@@ -32,13 +32,21 @@ function showList() {
 }
 
 function deleteAction(count) {
-	data.splice(count,1)
-	console.log(data);
 
-	$("#addForm").trigger("reset");
-	$("#updateForm").trigger("reset"); 
-	$("#update").css('display','none');   
-	showList();
+	var ans = confirm("Are you sure?");
+
+	if (ans) {
+		data.splice(count,1)
+		console.log(data);
+
+		$("#addForm").trigger("reset");
+		$("#updateForm").trigger("reset"); 
+		$("#update").css('display','none');   
+		showList();
+	}
+	else {
+		return false;
+	}
 }
 
 
@@ -51,9 +59,17 @@ $(document).ready(function() {
 			var email = $('input[name=email]').val();
 			var contact = $('input[name=contact]').val();
 
-				data.push([fname,lname,email,contact,count]);
-				count = data.length;
-				console.log(data);
+
+			for (var i = 0; i != data.length; i++) {
+				if (email == data[i][2]) {
+					alert("Email address has been taken. Please choose a different email");
+					return false;
+				}
+			}
+
+					data.push([fname,lname,email,contact,count]);
+					count = data.length;
+					console.log(data);
 
 						showList();
 						$("#addForm").trigger("reset");    
@@ -71,7 +87,8 @@ $(document).ready(function() {
 				data[count].splice(0,5,fname,lname,email,contact);
 
 					showList();
-					$("#updateForm").trigger("reset");      
+					$("#updateForm").trigger("reset"); 
+					alert("Update successful!");     
 		});
 
 		$("#hideForm1").click(function(){
